@@ -1,0 +1,46 @@
+<single-spa-router>
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+
+  <style>
+    main {
+      display: grid;
+      height: 100svh;
+      grid-template-columns: 200px auto;
+    }
+  </style>
+
+  <main>
+    <nav>
+      <application name="@vue3menu/vue-3-menu"></application>
+    </nav>
+
+    <route path="vue2">
+      <!-- <application name="@single-spa/welcome"></application> -->
+      <application name="@vue2App/vue-2-app"></application>
+    </route>
+    <route path="vue3">
+      <!-- <application name="@single-spa/welcome"></application> -->
+      <application name="@vue3App/vue-3-app"></application>
+    </route>
+    <route default>
+      <!-- <application name="@single-spa/welcome"></application> -->
+      <application name="@vue3App/vue-3-app"></application>
+    </route>
+  </main>
+</single-spa-router>

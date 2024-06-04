@@ -34,7 +34,8 @@
   <script type="systemjs-importmap">
     {
       "imports": {
-        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js"
+        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
+        "vuex": "https://cdnjs.cloudflare.com/ajax/libs/vuex/4.1.0/vuex.cjs.min.js"
       }
     }
   </script>
@@ -47,9 +48,10 @@
   <script type="systemjs-importmap">
     {
       "imports": {
-        "@vue3App/vue-3-app": "//localhost:8080/js/app.js",
-        "@vue2App/vue-2-app": "//localhost:8081/js/app.js",
-        "@vue3menu/vue-3-menu": "//localhost:8082/js/app.js",
+        "@vue2App/vue-2-app": "//localhost:8080/js/app.js",
+        "@vue3menu/vue-3-menu": "//localhost:8081/js/app.js",
+        "@vue3App/vue-3-app": "//localhost:8082/js/app.js",
+        "@vue3App2/vue-3-app-2": "//localhost:8083/js/app.js",
         "@root/root-config": "//localhost:9000/root-root-config.js"
       }
     }

@@ -5,7 +5,7 @@ module.exports = defineConfig({
       libraryTarget: 'system'
     },
     devServer: {
-      port: 8082
+      port: 8083
     }
   },
   transpileDependencies: true

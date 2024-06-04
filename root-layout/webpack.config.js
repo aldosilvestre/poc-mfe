@@ -1,6 +1,7 @@
 const { merge } = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = (webpackConfigEnv, argv) => {
   const orgName = "root";
@@ -13,8 +14,17 @@ module.exports = (webpackConfigEnv, argv) => {
   });
 
   return merge(defaultConfig, {
-    // modify the webpack config however you'd like to by adding to this object
     plugins: [
+      new ModuleFederationPlugin({
+        name: 'store',
+        library: { type: 'var', name: 'store' },
+        filename: 'remoteEntry.js',
+        remotes: { },
+        exposes: {
+          // './store': './src/store'
+        },
+        shared: []
+      }),
       new HtmlWebpackPlugin({
         inject: false,
         template: "src/index.ejs",

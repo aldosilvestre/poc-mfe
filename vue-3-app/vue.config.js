@@ -6,7 +6,8 @@ module.exports = defineConfig({
     },
     devServer: {
       port: 8082
-    }
+    },
+    externals: ['rxjs']
   },
   transpileDependencies: true
 })

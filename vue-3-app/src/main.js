@@ -14,6 +14,9 @@ const vuetify = createVuetify({
   directives,
 })
 
+// Vuex
+import vuex from './plugins/vuex'
+
 const vueLifecycles = singleSpaVue({
   createApp,
   appOptions: {
@@ -31,7 +34,10 @@ const vueLifecycles = singleSpaVue({
       });
     },
   },
-  handleInstance: (app) => { app.use(vuetify) }
+  handleInstance: (app) => {
+    app.use(vuetify)
+    app.use(vuex)
+  }
 });
 
 export const bootstrap = vueLifecycles.bootstrap;

@@ -1,20 +1,24 @@
 <template>
   <h1>Aplicacion con VUE 3</h1>
   <v-label>Componente de VUE 3</v-label>
-  <v-input type="text" />
-  <v-btn>Hola mundo</v-btn>
-  <v-btn variant="tonal">
-    Button
-  </v-btn>
+  <div class="d-flex flex-column">
+    <v-label>{{count}}</v-label>
+    <v-btn variant="tonal" @click="increment"> Button </v-btn>
+  </div>
 </template>
 
-<script>
+<script setup>
+import { computed } from 'vue'
+import { useStore } from 'vuex'
 
-export default {
-  name: 'App',
-  components: {
-  }
+const $store = useStore()
+
+const count = computed(() => $store.state.countStore.count)
+
+const increment = () => {
+  $store.commit('increment')
 }
+
 </script>
 
 <style>

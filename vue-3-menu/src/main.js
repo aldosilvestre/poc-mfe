@@ -4,6 +4,9 @@ import router from './router.js';
 
 import App from './App.vue';
 
+// Vuex
+import vuex from './plugins/vuex.js'
+
 const vueLifecycles = singleSpaVue({
   createApp,
   appOptions: {
@@ -22,6 +25,7 @@ const vueLifecycles = singleSpaVue({
   },
   handleInstance: (app) => {
     app.use(router);
+    app.use(vuex);
   }
 });
 

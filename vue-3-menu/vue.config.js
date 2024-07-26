@@ -1,4 +1,5 @@
 const { defineConfig } = require('@vue/cli-service')
+
 module.exports = defineConfig({
   configureWebpack: {
     output: {
@@ -6,7 +7,8 @@ module.exports = defineConfig({
     },
     devServer: {
       port: 8081
-    }
+    },
+    externals: ['rxjs']
   },
   transpileDependencies: true
 })
